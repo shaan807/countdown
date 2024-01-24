@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				background-color: #291c1c;
+			}
+			#main {
+				height: 60px;
+				width: 300px;
+				background-color: #fff;
+				color: black;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<div id="hr">24</div>
+			:
+			<div id="min">00</div>
+			:
+			<div id="sec">00</div>
+		</div>
+		<script>
+			const hr = document.getElementById("hr");
+			const min = document.getElementById("min");
+			const sec = document.getElementById("sec");
+			let h = 23;
+			let m = 59;
+			let s = 59;
+
+			function countdown() {
+				hr.innerHTML = parseInt(h / 10) == 0 ? `0${h.toString()}` : h;
+
+				min.innerHTML = parseInt(m / 10) == 0 ? `0${m.toString()}` : m;
+
+				sec.innerHTML = parseInt(s / 10) == 0 ? `0${s.toString()}` : s;
+				// console.log(h, m, s);
+
+				if (s) {
+					s--;
+				} else {
+					if (m) {
+						m--;
+					} else {
+						if (h) {
+							h--;
+						} else {
+							clearInterval(intervalId);
+						}
+						m = 59;
+					}
+					s = 59;
+				}
+			}
+
+			let intervalId;
+
+			function countdownStart() {
+				intervalId = setInterval(countdown, 1000);
+			}
+
+			window.addEventListener("DOMContentLoaded", () => {
+				countdownStart();
+			});
+		</script>
+	</body>
+</html>
