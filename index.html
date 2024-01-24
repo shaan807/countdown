@@ -76,7 +76,7 @@
         .flip-card .bottom-flip {
             position: absolute;
             bottom: 0;
-            width: 100%;
+            width: 80%;
             animation: flip-bottom 250ms ease-out 250ms;
             transform-origin: top;
             transform: rotateX(90deg);
@@ -97,7 +97,7 @@
         .container-segment {
             display: flex;
             flex-direction: column;
-            gap: .1em;
+            /* gap: .01em; */
             align-items: center;
         }
 
@@ -112,9 +112,10 @@
         }
 
         #hackathonImage {
-            width: 500px;
-            height: 500px;
-            margin-top: 10px;
+            width: 600px;
+            height: 600px;
+            margin-top: -230px;
+            margin-bottom: -120px;
         }
     </style>
     <script>
@@ -183,6 +184,7 @@
 <body>
     <img id="hackathonImage" src="logohacknew1.png" alt="Hackathon Image">
     <div class="container">
+
         <div class="container-segment">
             <div class="segment-title">Hours</div>
             <div class="segment">
@@ -222,6 +224,12 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="sponsor-images">
+        <img class="sponsor-img" src="hackathon.png" alt="Sponsor 1"  style="width: 100%; height: 150px; margin-top: 110px;">
+        <!-- <img class="sponsor-img" src="sponsor2.png" alt="Sponsor 2">
+        <img class="sponsor-img" src="sponsor3.png" alt="Sponsor 3"> -->
+        <!-- Add more sponsor images as needed -->
     </div>
 </body>
 </html>
